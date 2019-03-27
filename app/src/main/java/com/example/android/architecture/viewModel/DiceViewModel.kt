@@ -32,9 +32,7 @@ class DiceViewModel(app: Application) : AndroidViewModel(app) {
 
     fun rollDice() {
         dice.value = DiceHelper.rollDice()
-        headline.value = DiceHelper.evaluateDice(
-            getApplication(), dice.value
-        )
+        headline.value = DiceHelper.evaluateDice(context, dice.value)
         if (soundLoaded) {
             soundPool.play(soundId, 1f, 1f, 0, 0, 1f)
         }
