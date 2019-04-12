@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">Roll the Dice</string>
-    <string name="action_settings">Settings</string>
     <string name="roll_em">Roll \'em!</string>
     <string name="no_dice">No dice</string>
-    <string name="roll_the_dice">Roll the dice!</string>
     <string name="five_of_a_kind">5 of a kind!</string>
     <string name="four_of_a_kind">4 of a kind!</string>
     <string name="full_house">Full house!</string>
@@ -12,5 +10,4 @@
     <string name="two_pairs">Two pairs!</string>
     <string name="pair">That\'s a pair!</string>
     <string name="nothing_special">Nothing special</string>
-    <string name="button_prompt">Press the button \u21D2</string>
 </resources>

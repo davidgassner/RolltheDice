@@ -4,6 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
                 name="viewmodel"
                 type="com.example.android.architecture.viewModel.DiceViewModel"/>
@@ -33,53 +34,58 @@
                 android:id="@+id/die1"
                 android:layout_width="@dimen/die_dimen"
                 android:layout_height="@dimen/die_dimen"
-                android:src="@drawable/die_1"
                 android:contentDescription="@string/no_dice"
+                app:imageResource="@{viewmodel.drawables[1]}"
                 app:layout_constraintTop_toBottomOf="@+id/headline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/die2"
-                android:layout_marginTop="48dp"/>
+                android:layout_marginTop="48dp"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die2"
                 android:layout_width="@dimen/die_dimen"
                 android:layout_height="@dimen/die_dimen"
-                android:src="@drawable/die_2"
+                app:imageResource="@{viewmodel.drawables[2]}"
                 android:contentDescription="@string/no_dice"
                 app:layout_constraintTop_toTopOf="@+id/die1"
                 app:layout_constraintStart_toEndOf="@+id/die1"
-                app:layout_constraintEnd_toStartOf="@+id/die3"/>
+                app:layout_constraintEnd_toStartOf="@+id/die3"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die3"
                 android:layout_width="@dimen/die_dimen"
                 android:layout_height="@dimen/die_dimen"
-                android:src="@drawable/die_3"
+                app:imageResource="@{viewmodel.drawables[3]}"
                 android:contentDescription="@string/no_dice"
                 app:layout_constraintTop_toTopOf="@+id/die2"
                 app:layout_constraintStart_toEndOf="@+id/die2"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die4"
                 android:layout_width="@dimen/die_dimen"
                 android:layout_height="@dimen/die_dimen"
-                android:src="@drawable/die_4"
+                app:imageResource="@{viewmodel.drawables[4]}"
                 android:contentDescription="@string/no_dice"
                 android:layout_marginTop="@dimen/dice_vertical_margin"
                 app:layout_constraintStart_toStartOf="@id/die1"
                 app:layout_constraintEnd_toEndOf="@+id/die2"
-                app:layout_constraintTop_toBottomOf="@+id/die1"/>
+                app:layout_constraintTop_toBottomOf="@+id/die1"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die5"
                 android:layout_width="@dimen/die_dimen"
                 android:layout_height="@dimen/die_dimen"
-                android:src="@drawable/die_5"
+                app:imageResource="@{viewmodel.drawables[5]}"
                 android:contentDescription="@string/no_dice"
                 app:layout_constraintTop_toTopOf="@+id/die4"
                 app:layout_constraintStart_toStartOf="@+id/die2"
-                app:layout_constraintEnd_toEndOf="@+id/die3"/>
+                app:layout_constraintEnd_toEndOf="@+id/die3"
+                tools:src="@drawable/die_6"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
