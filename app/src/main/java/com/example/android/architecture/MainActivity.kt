@@ -3,39 +3,45 @@ package com.example.android.architecture
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.android.architecture.databinding.ActivityMainBinding
 import com.example.android.architecture.viewModel.DiceViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: DiceViewModel
+    private lateinit var viewmodel: DiceViewModel
     private val imageViews by lazy {
         arrayOf<ImageView>(die1, die2, die3, die4, die5)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        val binding: ActivityMainBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.lifecycleOwner = this
+
         setSupportActionBar(toolbar)
 
         initViewModel()
+        binding.viewmodel = viewmodel
 
-        fab.setOnClickListener { viewModel.rollDice() }
     }
 
     /**
-     * Initialize the viewModel
+     * Initialize the viewmodel
      */
     private fun initViewModel() {
-        viewModel = ViewModelProviders.of(this)
+        viewmodel = ViewModelProviders.of(this)
             .get(DiceViewModel::class.java)
-        viewModel.headline.observe(this, Observer {
-            headline.text = it
-        })
-        viewModel.dice.observe(this, Observer {
+//        viewmodel.headline.observe(this, Observer {
+//            headline.text = it
+//        })
+        viewmodel.dice.observe(this, Observer {
             updateDisplay(it)
         })
     }
