@@ -23,13 +23,7 @@ class DiceViewModel(app: Application) : AndroidViewModel(app) {
     init {
 //      Initialize properties
         headline.value = app.getString(R.string.roll_em)
-        drawables.value = mutableMapOf(
-            Pair(1, R.drawable.die_6),
-            Pair(2, R.drawable.die_6),
-            Pair(3, R.drawable.die_6),
-            Pair(4, R.drawable.die_6),
-            Pair(5, R.drawable.die_6)
-        )
+        updateDrawables(intArrayOf(6, 6, 6, 6, 6))
 
 //      Initialize the soundPool object
         initSoundPool()
