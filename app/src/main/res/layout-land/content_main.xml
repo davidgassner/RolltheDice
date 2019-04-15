@@ -27,7 +27,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/headline_margin"
                 android:layout_marginBottom="@dimen/headline_margin"
-                android:textSize="36sp"/>
+                android:textSize="36sp"
+                tools:text="@string/roll_em"/>
 
         <ImageView
                 android:id="@+id/die1"
@@ -38,7 +39,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/headline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/die2"
-                android:layout_marginTop="@dimen/dice_vertical_margin"/>
+                android:layout_marginTop="@dimen/dice_vertical_margin"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die2"
@@ -48,7 +50,8 @@
                 android:contentDescription="@string/no_dice"
                 app:layout_constraintStart_toEndOf="@+id/die1"
                 app:layout_constraintEnd_toStartOf="@+id/die3"
-                app:layout_constraintTop_toTopOf="@+id/die1"/>
+                app:layout_constraintTop_toTopOf="@+id/die1"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die3"
@@ -58,7 +61,8 @@
                 android:contentDescription="@string/no_dice"
                 app:layout_constraintStart_toEndOf="@+id/die2"
                 app:layout_constraintEnd_toStartOf="@+id/die4"
-                app:layout_constraintTop_toTopOf="@+id/die2"/>
+                app:layout_constraintTop_toTopOf="@+id/die2"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die4"
@@ -68,7 +72,8 @@
                 android:contentDescription="@string/no_dice"
                 app:layout_constraintStart_toEndOf="@+id/die3"
                 app:layout_constraintEnd_toStartOf="@+id/die5"
-                app:layout_constraintTop_toTopOf="@+id/die3"/>
+                app:layout_constraintTop_toTopOf="@+id/die3"
+                tools:src="@drawable/die_6"/>
 
         <ImageView
                 android:id="@+id/die5"
@@ -78,7 +83,8 @@
                 android:contentDescription="@string/no_dice"
                 app:layout_constraintStart_toEndOf="@+id/die4"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/die4"/>
+                app:layout_constraintTop_toTopOf="@+id/die4"
+                tools:src="@drawable/die_6"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

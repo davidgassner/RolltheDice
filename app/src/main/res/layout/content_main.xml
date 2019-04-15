@@ -28,7 +28,7 @@
                 android:layout_marginTop="@dimen/headline_margin"
                 android:layout_marginBottom="@dimen/headline_margin"
                 android:textSize="36sp"
-                android:freezesText="true"/>
+                tools:text="@string/roll_em"/>
 
         <ImageView
                 android:id="@+id/die1"
