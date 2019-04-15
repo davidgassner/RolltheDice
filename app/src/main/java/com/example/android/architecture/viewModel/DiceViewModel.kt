@@ -11,14 +11,13 @@ import com.example.android.architecture.R
 import com.example.android.architecture.util.DiceHelper
 
 class DiceViewModel(app: Application) : AndroidViewModel(app) {
+    private var context: Context = app
     private lateinit var soundPool: SoundPool
+    private var soundId = 0
+    private var soundLoaded = false
 
     val headline = MutableLiveData<String>()
     val drawables = MutableLiveData<MutableMap<Int, Int>>()
-
-    private var soundId = 0
-    private var soundLoaded = false
-    private var context: Context = app
 
     init {
 //      Initialize properties
@@ -48,24 +47,17 @@ class DiceViewModel(app: Application) : AndroidViewModel(app) {
     private fun updateDrawables(dice: IntArray) {
         val newDrawables = mutableMapOf<Int, Int>()
         for (i in 0 until dice.size) {
-            newDrawables[i + 1] = getDrawable(dice[i])
+            newDrawables[i + 1] = when (dice[i]) {
+                1 -> R.drawable.die_1
+                2 -> R.drawable.die_2
+                3 -> R.drawable.die_3
+                4 -> R.drawable.die_4
+                5 -> R.drawable.die_5
+                6 -> R.drawable.die_6
+                else -> R.drawable.die_6
+            }
         }
         drawables.value = newDrawables
-    }
-
-    /**
-     * Return the die image resource for a number from 1 to 6
-     */
-    private fun getDrawable(die: Int): Int {
-        return when (die) {
-            1 -> R.drawable.die_1
-            2 -> R.drawable.die_2
-            3 -> R.drawable.die_3
-            4 -> R.drawable.die_4
-            5 -> R.drawable.die_5
-            6 -> R.drawable.die_6
-            else -> R.drawable.die_6
-        }
     }
 
     /**
